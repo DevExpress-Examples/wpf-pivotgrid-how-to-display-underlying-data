@@ -45,8 +45,8 @@ Namespace WpfDrillDownDataSourceExample
 			Next i
 			Return orderList
 		End Function
-		Public Function GetOrderDate() As Date
-			Return New Date(random.Next(2017, 2019), random.Next(1, 13), random.Next(1, 28))
+		Public Function GetOrderDate() As DateTime
+			Return New DateTime(random.Next(2017, 2019), random.Next(1, 13), random.Next(1, 28))
 		End Function
 		Public Function GetQuantity() As Integer
 			Return random.Next(1, 100)

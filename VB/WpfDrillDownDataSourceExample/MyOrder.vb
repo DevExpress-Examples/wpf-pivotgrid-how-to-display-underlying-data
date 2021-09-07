@@ -12,12 +12,12 @@ Namespace WpfDrillDownDataSourceExample
 				privateID = value
 			End Set
 		End Property
-		Private privateOrderDate As Date
-		Public Property OrderDate() As Date
+		Private privateOrderDate As DateTime
+		Public Property OrderDate() As DateTime
 			Get
 				Return privateOrderDate
 			End Get
-			Friend Set(ByVal value As Date)
+			Friend Set(ByVal value As DateTime)
 				privateOrderDate = value
 			End Set
 		End Property
