@@ -3,7 +3,7 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T828661)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# How to: Use the CreateDrillDownDataSource Method to Obtain Underlying Data
+# Pivot Grid for WPF - How to display underlying records
 
 This example demonstrates how to obtain the records from the control's underlying data source for a selected cell or multiple selected cells.
 
@@ -16,8 +16,17 @@ The [PivotGridControl.CellClick](https://docs.devexpress.com/WPF/DevExpress.Xpf.
 
 The [PivotGridControl.CellSelectionChanged](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.PivotGridControl.CellSelectionChanged) event is handled in the code-behind. The coordinates of the selected cells are obtained with the [PivotGridControl.MultiSelection.SelectedCells](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.Selection.IMultipleSelection.SelectedCells) notation. For each (X, Y) pair of cell coordinates the [PivotGridControl.GetCellInfo](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.PivotGridControl.GetCellInfo(System.Int32-System.Int32)) method returns an object whose  [CreateDrillDownDataSource](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.PivotCellBaseEventArgs.CreateDrillDownDataSource) method yields the [PivotDrillDownDataSource](https://docs.devexpress.com/WPF/DevExpress.Xpf.PivotGrid.PivotDrillDownDataSource) object. The **PivotDrillDownDataSource** exposes an enumerator and supports an iteration over a collection of the [PivotDrillDownDataRow](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotDrillDownDataRow) objects. The [PivotDrillDownDataRow.ListSourceRowIndex](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPivotGrid.PivotDrillDownDataRow.ListSourceRowIndex) property value is an index of the record in the original data source, so the source record is also available and can be added to a collection. The resulting collection is bound to the [ItemsControl](https://docs.microsoft.com/en-us/dotnet/api/system.windows.controls.itemscontrol) for display.
 
-**See also:**
+## Files to Look At
 
-* [How to: Display Underlying (Drill-Down) Records](https://github.com/DevExpress-Examples/how-to-obtain-underlying-data-e2173)
-* [Drill Down to the Underlying Data](https://docs.devexpress.com/WPF/8056)
-* [Asynchronous Mode](https://docs.devexpress.com/WPF/9776)
+- [MainWindow.xaml](./CS/WpfDrillDownDataSourceExample/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/WpfDrillDownDataSourceExample/MainWindow.xaml))
+- [MainWindow.xaml.cs](./CS/WpfDrillDownDataSourceExample/MainWindow.xaml.cs) (VB: [MainWindow.xaml.vb](./VB/WpfDrillDownDataSourceExample/MainWindow.xaml.vb))
+- [DatabaseHelper.cs](./CS/WpfDrillDownDataSourceExample/DatabaseHelper.cs) (VB: [DatabaseHelper.vb](./VB/WpfDrillDownDataSourceExample/DatabaseHelper.vb))
+
+## Documentation
+
+- [Drill Down to the Underlying Data](https://docs.devexpress.com/WPF/8056)
+- [Asynchronous Mode](https://docs.devexpress.com/WPF/9776)
+
+## More Examples
+
+-  [Pivot Grid for WPF - How to Display Underlying (Drill-Down) Records](https://github.com/DevExpress-Examples/how-to-obtain-underlying-data-e2173)
